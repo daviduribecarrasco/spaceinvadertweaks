@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((800
 , 600))
 
 # Background
-background = pygame.image.load('background.png')
+background = pygame.image.load("background.png")
 # Sound
 mixer.music.load("background.wav")
 mixer.music.play(-1)
@@ -45,12 +45,18 @@ enemyX_change = []
 enemyY_change = []
 num_of_enemies = 8
 
+
+
+
+
+
 for i in range(num_of_enemies):
     enemyImg.append(pygame.image.load('enemy.png'))
     enemyX.append(i * 100)
     enemyY.append(0)
     enemyX_change.append(4)
     enemyY_change.append(40)
+
 
 for i in range(num_of_special):
     specialImg.append(pygame.image.load('specialboss.png'))
@@ -214,10 +220,10 @@ while running:
 
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
-            enemyX_change[i] = ((score_value + 6) * (.1))
+            enemyX_change[i] = 4
             enemyY[i] += enemyY_change[i]
         elif enemyX[i] >= 736:
-            enemyX_change[i] = -((score_value + 6) * (.1))
+            enemyX_change[i] = -4
             enemyY[i] += enemyY_change[i] 
 
         # Collision
